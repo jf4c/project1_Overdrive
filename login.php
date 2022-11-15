@@ -1,11 +1,29 @@
-<form method="post">
-    <div>
-        <label for="email">Users: </label>
-        <input type="text" nome="login" id="login">     
-    </div>
-    <div>
-        <label for="password">Senha: </label>
-        <input type="password" nome="pass">
-    </div>
-    <input type="submit" value="Submit">
-</form>
+<?php
+
+include('conexao.php');
+
+if(empty($_POST['user']) || empty($_POST['pass'])){
+    header('Location: index.php');
+    exit();
+}
+
+
+$user = mysqli_real_escape_string($conexao, $_POST['user']);
+$password = mysqli_real_escape_string($conexao, $_POST['pass']);
+
+$query = "select addres from users where addres = '{$user}' and pass = md5(md5('{$password}'))";
+
+$result = mysqli_query($conexao, $query);
+
+$row = mysqli_num_rows($result);
+
+if($row == 1){
+    $_SESSION['user'] = $_user;
+    header('Location: home.php');
+    exit();
+
+}else{
+    header('Location: index.php');
+    exit();
+}
+?>
