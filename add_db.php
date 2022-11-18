@@ -15,7 +15,7 @@
     $cidade = mysqli_real_escape_string($conexao, $_POST['cidade']);
     $carro = mysqli_real_escape_string($conexao, $_POST['carro']);
 
-    print_r("$nome, $email, $password, $checkPassword, $cpf, $cnh, $phone, $cep, $logradouro, $bairro, $cidade, $carro");
+    print_r("$nome, $email, $password, $checkPassword, $cpf, $cnh, $phone, $cep, $logradouro, $bairro, $cidade, $carro"); 
     
     $query = "insert into users (name,  email, CPF, CNH, phone, addres, pass, car) values
     ('{$nome}',

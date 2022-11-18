@@ -24,9 +24,9 @@ select addres, pass from users where addres = 'admin' and pass = md5(md5('admin'
 
 -- drop table;
 
-desc users;
+desc users;-- 
 
-select addres, admin from users;
+select * from users;
 
 select * from users;-- 
 
