@@ -14,15 +14,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/form.css">
+
     </head>
     
     <body>
         <header>
-            <h1><img src="img/logo.png" alt="logo da Overdrive"></h1>
+            <h1><img class="logo" src="img/logo.png" alt="logo da Overdrive"></h1>
             <nav>
                 <ul>
-                    <li><a href="form.php">Adicionar</a></li>
+                    <li><a class="add" href="home.php">Usuarios</a></li>
+                    <li><a class="add" href="empresas.php">empresas</a></li>
+                    <li><a class="add" href="form.php">Adicionar</a></li>
                 </ul>
             </nav>
         </header>    

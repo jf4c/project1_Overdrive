@@ -1,0 +1,32 @@
+header{
+    display: flex;
+    background-color: #3f3e3e;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+body{
+    height: 100vh;
+    background: linear-gradient(#F20544, #F2055C, #BF0449, #402431) ;
+
+}
+
+.logo{
+    width: 20rem;
+    padding: 5px;
+}
+nav{
+    width: 20%;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.add{
+    font-size: 20px;
+    color: #FFF;
+}
