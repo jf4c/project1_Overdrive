@@ -24,9 +24,8 @@
             <h1><img class="logo" src="img/logo.png" alt="logo da Overdrive"></h1>
             <nav>
                 <ul>
-                    <li class="li-nav"><a class="link-nav" href="home.php">Usuarios</a></li>
-                    <li class="li-nav"><a class="link-nav" href="empresas.php">empresas</a></li>
-                    <li class="li-nav"><a class="link-nav" href="form.php">Adicionar</a></li>
+                    <li class="li-nav"><a class="link-nav" href="tabelaUsers.php">Usuarios</a></li>
+                    <li class="li-nav"><a class="link-nav" href="tabelaEmpresas.php">empresas</a></li>
                 </ul>
             </nav>
         </header>    
@@ -87,8 +86,6 @@
                         <label for="cep">CEP: </label>
                         <input type="text" name="cep" id="cep" class="input addres cep" value="" size="10"  maxlength="9" onblur="buscaCep(this.value);" placeholder="CEP">     
                     </div>
-
-                    
                     
                     <div class="input-box numero">
                         <label for="numero">Número: </label>

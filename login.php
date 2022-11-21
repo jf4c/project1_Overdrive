@@ -18,7 +18,7 @@ $row = mysqli_num_rows($result);
 
 if($row == 1){
     $_SESSION['user'] = $user;
-    header('Location: home.php');
+    header('Location: tabelaUsers.php');
     exit();
 
 }else{

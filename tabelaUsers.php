@@ -8,7 +8,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
         <title>Document</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/tabelaUsers.css">
     </head>
     
     <body>
@@ -25,9 +25,8 @@
             <h1><img class="logo" src="img/logo.png" alt="logo da Overdrive"></h1>
             <nav>
                 <ul>
-                    <li class="li-nav"><a class="link-nav" href="home.php">Usuarios</a></li>
-                    <li class="li-nav"><a class="link-nav" href="empresas.php">empresas</a></li>
-                    <li class="li-nav"><a class="link-nav" href="form.php">Adicionar</a></li>
+                    <li class="li-nav"><a class="link-nav" href="tabelaUsers.php">Usuarios</a></li>
+                    <li class="li-nav"><a class="link-nav" href="tabelaEmpresas.php">empresas</a></li>
                 </ul>
             </nav>
         </header>    
@@ -36,7 +35,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">userId</th>
+                        <!-- <th scope="col">userId</th> -->
                         <th scope="col">Nome</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">CPF</th>
@@ -52,7 +51,7 @@
                    <?php
                         while($user_data = mysqli_fetch_assoc($result)){
                             echo "<tr>";
-                            echo "<td>".$user_data['userId']."</td>";
+                            // echo "<td>".$user_data['userId']."</td>";
                             echo "<td>".$user_data['name']."</td>";
                             echo "<td>".$user_data['Email']."</tdclass=>";
                             echo "<td>".$user_data['CPF']."</td>";
@@ -76,9 +75,21 @@
                                     </td>";  
                             echo "</tr>";
                         }
-                    ?>
-                    <abbr title="editar"></abbr>
+                        ?>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="9" class="add">
+                            <abbr title='adicionar'>
+                                <a class="" href="formUser.php">
+                                    <span class='material-symbols-outlined add'>add</span>
+                                </a>
+                            </abbr>
+                        </th>
+
+                    </tr>
+
+                </tfoot>
             </table>
         </main> 
         <footer>

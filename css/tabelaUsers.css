@@ -4,7 +4,7 @@ table, td, th{
 }
 
 table{
-    width: 80vw;
+    width: 90vw;
     margin: 30px auto ;
     table-layout: auto;
     background-color: #6ac3ff;
@@ -24,18 +24,35 @@ th,td{
   text-align: center;  
   height: 30px;
   vertical-align: middle;
-  /* background-color: ; */
+  font-size: 1.1rem;
 }
 
 .button-td{
-    width: 40%;
-    /* text-align: center; */
-    /* border: 1px solid; */
-    margin: 1px;
-
-}
-span{
-    border: 1px solid;
+    font-size: 1.8rem;
+    margin: 5px;
     background-color: silver;
     color: #000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #000000af;
+    
+}
+.edit{
+    background-color: #00ff2a;
+
+}
+
+.delete{
+    background-color: red;
+}
+
+.add{
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    transition: 1s;
+
+}
+.add:hover{
+    background-color:#FF0E46;
+    color: #FFF;
 }

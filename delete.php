@@ -14,5 +14,5 @@
             $resultDelete = $conexao->query($queryDelete);
         }
     }
-    header('Location: home.php');
+    header('Location: tabelaUsers.php');
 
