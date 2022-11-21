@@ -25,9 +25,9 @@
             <h1><img class="logo" src="img/logo.png" alt="logo da Overdrive"></h1>
             <nav>
                 <ul>
-                    <li><a class="add" href="home.php">Usuarios</a></li>
-                    <li><a class="add" href="empresas.php">empresas</a></li>
-                    <li><a class="add" href="form.php">Adicionar</a></li>
+                    <li class="li-nav"><a class="link-nav" href="home.php">Usuarios</a></li>
+                    <li class="li-nav"><a class="link-nav" href="empresas.php">empresas</a></li>
+                    <li class="li-nav"><a class="link-nav" href="form.php">Adicionar</a></li>
                 </ul>
             </nav>
         </header>    
@@ -63,16 +63,21 @@
                             echo "<td></td>";
                             echo "<td>
                                     <a href='edit.php?id=$user_data[userId]'>
-                                        <span class='material-symbols-outlined button-td edit'>edit</span>
+                                        <abbr title='editar'>
+                                            <span class='material-symbols-outlined button-td edit'>edit</span>
+                                        </abbr>
                                     </a>
                                     <a href='delete.php?id=$user_data[userId]'>
-                                        <span class='material-symbols-outlined button-td delete'>delete</span>
+                                        <abbr title='apagar'>
+                                            <span class='material-symbols-outlined button-td delete'>delete</span>
+                                        </abbr>
                                     </a>
                                     
                                     </td>";  
                             echo "</tr>";
                         }
                     ?>
+                    <abbr title="editar"></abbr>
                 </tbody>
             </table>
         </main> 
