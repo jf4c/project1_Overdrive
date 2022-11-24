@@ -12,6 +12,14 @@ admin bool default FALSE,
 primary key(userId)
 )auto_increment=1;
 
+alter table users add CEP varchar(10) after addres;
+alter table users add rua varchar(20) after CEP;
+alter table users add bairro varchar(50) after rua;
+alter table users add cidade varchar(50) after bairro;
+alter table users add UF varchar(5) after cidade;
+
+alter table users drop rua;
+
 desc users;
 
 insert into users
@@ -22,17 +30,17 @@ select * from users;
 
 select addres, pass from users where addres = 'admin' and pass = md5(md5('admin')); 
 
+select CPF from users where CPF = '44091104894';
+
 -- drop table;
 
-desc users;-- 
+desc users;
 
 select * from users;
 
-select * from users;-- 
+alter table users add empresa varchar(255);
+alter table users add foreign key (empresa)
+references company(CNPJ);
 
-
-select addres from users where addres = '{$user}' and pass = md5(md5('{$password}'));
-
-select * from users order by id desc 
-
+update users set empresa = "45.339.363/0001-95" where userId = '11';
 

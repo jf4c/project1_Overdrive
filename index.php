@@ -22,7 +22,7 @@
                     <form class="forms" action='login.php' method="post">
                         <div class="input-box">
                             <span class="material-symbols-outlined">person</span>
-                            <input type="text" name=user id="user" class="input"  placeholder="CPF" >     
+                            <input type="text" name=user id="user" class="input"  placeholder="E-mail" >     
                             <!-- <label for="user">User: </label> -->
                         </div>
             

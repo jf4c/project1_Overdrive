@@ -17,20 +17,34 @@
     $cidade = mysqli_real_escape_string($conexao, $_POST['cidade']);
     $uf = mysqli_real_escape_string($conexao, $_POST['uf']);
 
+    $sqlCPF = "select CPF from users where CPF = '{$cpf}';";
+    $result = mysqli_query($conexao, $sqlCPF);
+    $row = mysqli_num_rows($result);
 
-    print_r("$nome, $email, $password, $checkPassword, $cpf, $cnh, $phone, $cep, $bairro, $bairro, $cidade, $carro"); 
+    if($password !== $checkPassword){
+        header('Location: formUser.php');
+        echo "<span> erro senhas diferentes </span>";
+    }elseif($row == 1){
+        header('Location: formUser.php');
+        echo "<span>Usuario já cadastrado</span>";
+    }else{
+        $query = "insert into users (name, email, pass, CPF, CNH, carro, phone, CEP, rua, numero, bairro, cidade, UF) values
+        ('{$nome}',
+        '{$email}',
+        md5(md5('{$password}')), 
+        '{$cpf}', 
+        '{$cnh}', 
+        '{$carro}',
+        '{$phone}',   
+        '{$cep}', 
+        '{$rua}', 
+        '{$num}',
+        '{$bairro}', 
+        '{$cidade}', 
+        '{$uf}')";
     
-    $query = "insert into users (name,  email, CPF, CNH, phone, addres, pass, car) values
-    ('{$nome}',
-    '{$email}',
-    '{$cpf}', 
-    '{$cnh}', 
-    '{$phone}', 
-    '{$cep} {$rua} {$bairro} {$cidade} {$uf}',
-    md5(md5('{$password}')), 
-    '{$carro}')";
-
-    $result = mysqli_query($conexao, $query);
+        $addQuery = mysqli_query($conexao, $query);
+        header('Location: formUserphp');
+    }
     
-    header('Location: form.php');
 ?>

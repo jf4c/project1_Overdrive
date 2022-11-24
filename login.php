@@ -10,7 +10,7 @@ if(empty($_POST['user']) || empty($_POST['pass'])){
 $user = mysqli_real_escape_string($conexao, $_POST['user']);
 $password = mysqli_real_escape_string($conexao, $_POST['pass']);
 
-$query = "select addres from users where addres = '{$user}' and pass = md5(md5('{$password}'))";
+$query = "select email from users where (email = '{$user}' or CPF = '{$user}') and pass = md5(md5('{$password}'))";
 
 $result = mysqli_query($conexao, $query);
 

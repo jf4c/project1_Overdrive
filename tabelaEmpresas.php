@@ -14,7 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <title>Document</title>
+        <title>CRUD | Company</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/tabelaUsers.css">
@@ -37,20 +37,15 @@
                 <thead>
                     <tr>
                         <!-- <th scope="col">userId</th> -->
-                        <th width="7%" scope="col">Nome</th>
-                        <th width="10%" scope="col">E-mail</th>
-                        <th width="7%" scope="col">CPF</th>
-                        <th width="7%" scope="col">CNH</th>
-                        <th width="5%" scope="col">carro</th>
-                        <th width="7%" scope="col">Telefone</th>
-                        <th width="7%" scope="col">CEP</th>
-                        <th width="7%" scope="col">Rua</th>
-                        <th width="4%" scope="col">numero</th>
-                        <th width="7%" scope="col">Bairro</th>
-                        <th width="7%" scope="col">cidade</th>
-                        <th width="3%" scope="col">UF</th>
-                        <th width="7%" scope="col">Empresas</th>
-                        <th width="7%" scope="col">***</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">CNH</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">endereço</th>
+                        <th scope="col">carro</th>
+                        <th scope="col">Empresa</th>
+                        <th scope="col">**</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,14 +57,9 @@
                             echo "<td>".$user_data['Email']."</tdclass=>";
                             echo "<td>".$user_data['CPF']."</td>";
                             echo "<td>".$user_data['CNH']."</td>";
-                            echo "<td>".$user_data['carro']."</td>";
                             echo "<td>".$user_data['phone']."</td>";
-                            echo "<td>".$user_data['CEP']."</td>";
-                            echo "<td>".$user_data['rua']."</td>";
-                            echo "<td>".$user_data['numero']."</td>";
-                            echo "<td>".$user_data['bairro']."</td>";
-                            echo "<td>".$user_data['cidade']."</td>";
-                            echo "<td>".$user_data['UF']."</td>";
+                            echo "<td>".$user_data['addres']."</td>";
+                            echo "<td>".$user_data['car']."</td>";
                             echo "<td></td>";
                             echo "<td>
                                     <a href='edit.php?id=$user_data[userId]'>
@@ -90,7 +80,7 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colspan="14" class="add">
+                        <th colspan="9" class="add">
                             <abbr title='adicionar'>
                                 <a class="" href="formUser.php">
                                     <span class='material-symbols-outlined add'>add</span>
