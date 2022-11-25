@@ -48,3 +48,7 @@ ul{
 .li-nav:hover{
     background-color: #BF0449;
 }
+
+.active{
+    background-color: #BF0449;
+}

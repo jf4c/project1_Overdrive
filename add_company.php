@@ -3,13 +3,9 @@
     include('conexao.php');
 
     $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
-    $email = mysqli_real_escape_string($conexao, $_POST['email']);
-    $password = mysqli_real_escape_string($conexao, $_POST['senha']);
-    $checkPassword = mysqli_real_escape_string($conexao, $_POST['senha_conf']);
-    $cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
+    $nf = mysqli_real_escape_string($conexao, $_POST['fantasy']);
+    $cnpj = mysqli_real_escape_string($conexao, $_POST['cnpj']);
     $phone = mysqli_real_escape_string($conexao, $_POST['phone']);
-    $cnh = mysqli_real_escape_string($conexao, $_POST['cnh']);
-    $carro = mysqli_real_escape_string($conexao, $_POST['carro']);
     $cep = mysqli_real_escape_string($conexao, $_POST['cep']);
     $num = mysqli_real_escape_string($conexao, $_POST['numero']);
     $rua = mysqli_real_escape_string($conexao, $_POST['rua']);
@@ -17,24 +13,18 @@
     $cidade = mysqli_real_escape_string($conexao, $_POST['cidade']);
     $uf = mysqli_real_escape_string($conexao, $_POST['uf']);
 
-    $sqlCPF = "select CPF from users where CPF = '{$cpf}';";
+    $sqlCPF = "select CNPJ from company where CNPJ = '{$cnpj}';";
     $result = mysqli_query($conexao, $sqlCPF);
     $row = mysqli_num_rows($result);
 
-    if($password !== $checkPassword){
-        header('Location: formUser.php');
-        echo "<span> erro senhas diferentes </span>";
-    }elseif($row == 1){
-        header('Location: formUser.php');
+    if($row == 1){
+        header('Location: formCompany.php');
         echo "<span>Usuario já cadastrado</span>";
     }else{
-        $query = "insert into users (name, email, pass, CPF, CNH, carro, phone, CEP, rua, numero, bairro, cidade, UF) values
+        $query = "insert into company (name, fantasyName, CNPJ, phone, CEP, rua, numero, bairro, cidade, UF) values
         ('{$nome}',
-        '{$email}',
-        md5(md5('{$password}')), 
-        '{$cpf}', 
-        '{$cnh}', 
-        '{$carro}',
+        '{$nf}',
+        '{$cnpj}', 
         '{$phone}',   
         '{$cep}', 
         '{$rua}', 
@@ -44,7 +34,7 @@
         '{$uf}')";
     
         $addQuery = mysqli_query($conexao, $query);
-        header('Location: formUser.php');
+        header('Location: formCompany.php');
     }
     
 ?>

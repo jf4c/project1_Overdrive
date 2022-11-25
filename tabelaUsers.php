@@ -59,7 +59,7 @@
                             echo "<tr>";
                             // echo "<td>".$user_data['userId']."</td>";
                             echo "<td>".$user_data['name']."</td>";
-                            echo "<td>".$user_data['Email']."</tdclass=>";
+                            echo "<td>".$user_data['Email']."</td>";
                             echo "<td>".$user_data['CPF']."</td>";
                             echo "<td>".$user_data['CNH']."</td>";
                             echo "<td>".$user_data['carro']."</td>";
@@ -101,5 +101,6 @@
                 </tfoot>
             </table>
         </main> 
+        <script src="js/menuNav.js"></script>
     </body>
 </html>
