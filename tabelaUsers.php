@@ -70,19 +70,25 @@
                             echo "<td>".$user_data['bairro']."</td>";
                             echo "<td>".$user_data['cidade']."</td>";
                             echo "<td>".$user_data['UF']."</td>";
-                            echo "<td></td>";
                             echo "<td>
-                                    <a href='edit.php?id=$user_data[userId]'>
+                                    <abbr title='adicionar'>
+                                        <a href='user/formUser.php'>
+                                            <span class='material-symbols-outlined add'>add</span>
+                                        </a>
+                                    </abbr>
+                                </td>";
+                           
+                                echo "<td>
+                                    <a href='user/edit_user.php?id=$user_data[userId]'>
                                         <abbr title='editar'>
                                             <span class='material-symbols-outlined button-td edit'>edit</span>
                                         </abbr>
                                     </a>
-                                    <a href='delete.php?id=$user_data[userId]'>
+                                    <a href='user/delete_user.php?id=$user_data[userId]'>
                                         <abbr title='apagar'>
                                             <span class='material-symbols-outlined button-td delete'>delete</span>
                                         </abbr>
                                     </a>
-                                    
                                     </td>";  
                             echo "</tr>";
                         }
@@ -92,7 +98,7 @@
                     <tr>
                         <th colspan="14" class="add">
                             <abbr title='adicionar'>
-                                <a class="" href="formUser.php">
+                                <a class="" href="user/formUser.php">
                                     <span class='material-symbols-outlined add'>add</span>
                                 </a>
                             </abbr>

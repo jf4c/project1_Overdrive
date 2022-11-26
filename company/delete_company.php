@@ -1,7 +1,7 @@
 <?php
 
     if(!empty($_GET['cnpj'])){
-        include_once('conexao.php');
+        include_once('../conexao.php');
 
         $cnpj = $_GET['cnpj'];
 
@@ -14,5 +14,9 @@
             $resultDelete = $conexao->query($queryDelete);
         }
     }
-    header('Location: tabelaCompany.php');
+    header('Location: ../tabelaEmpresas.php');
+    exit();
+
+    
+
 

@@ -1,9 +1,11 @@
-console.log("test");
-const nav = document.querySelectorAll(".li-nav");
+const activePage = window.location.pathname;
+const navBar = document.querySelectorAll(".link-nav");
+console.log(navBar);
 
-nav.forEach((e) =>{
-    e.addEventListener("click", (element) =>{
-        element.classList.toggle("active");
-    });
+navBar.forEach(link =>{
+    if(link.href.includes(`${activePage}`)){
+        link.classList.add('active');
+    }
 });
+
 

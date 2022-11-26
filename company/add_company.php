@@ -1,6 +1,6 @@
 <?php   
     session_start();
-    include('conexao.php');
+    include('../conexao.php');
 
     $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
     $nf = mysqli_real_escape_string($conexao, $_POST['fantasy']);

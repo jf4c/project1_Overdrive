@@ -1,6 +1,6 @@
 <?php
-    include('check_log.php');
-    include('conexao.php');
+    include('../check_log.php');
+    include('../conexao.php');
 
     $query = "select * from users order by userId desc";
     $result = mysqli_query($conexao, $query);
@@ -14,19 +14,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/form.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/form.css">
         
     </head>
     <body>
         <header>
-            <h1><img class="logo" src="img/logo.png" alt="logo da Overdrive"></h1>
+            <h1><img class="logo" src="../img/logo.png" alt="logo da Overdrive"></h1>
             <nav>
                 <ul>
-                    <li class="li-nav"><a class="link-nav" href="tabelaUsers.php">Usuarios</a></li>
-                    <li class="li-nav"><a class="link-nav" href="tabelaEmpresas.php">empresas</a></li>
-                    <li class="li-nav"><a class="link-nav" href="logout.php">sair</a></li>
+                    <li class="li-nav"><a class="link-nav" href="../tabelaUsers.php">Usuarios</a></li>
+                    <li class="li-nav"><a class="link-nav" href="../tabelaEmpresas.php">empresas</a></li>
+                    <li class="li-nav"><a class="link-nav" href="../logout.php">sair</a></li>
                 </ul>
             </nav>
         </header>    
@@ -127,7 +127,7 @@
         <footer>
         </footer> 
         
-    <script src="js/buscaCEP.js"></script>      
+    <script src="../js/buscaCEP.js"></script>      
     </body>
     
 </html>

@@ -32,7 +32,6 @@ ul{
 
 .li-nav{
     text-align: center;
-    border-radius: 10px;
     
 }
 
@@ -43,11 +42,9 @@ ul{
     padding: 1rem;
     text-align: center;
     line-height: 70px;
+    border-radius: 10px;
 }
 
-.li-nav:hover{
-    background-color: #BF0449;
-}
 
 .active{
     background-color: #BF0449;

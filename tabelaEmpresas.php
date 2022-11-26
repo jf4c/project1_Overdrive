@@ -57,6 +57,7 @@
                             // echo "<td>".$user_data['userId']."</td>";
                             echo "<td>".$user_data['name']."</td>";
                             echo "<td>".$user_data['fantasyName']."</td>";
+                            echo "<td>".$user_data['CNPJ']."</td>";
                             echo "<td>".$user_data['phone']."</td>";
                             echo "<td>".$user_data['CEP']."</td>";
                             echo "<td>".$user_data['rua']."</td>";
@@ -64,19 +65,18 @@
                             echo "<td>".$user_data['bairro']."</td>";
                             echo "<td>".$user_data['cidade']."</td>";
                             echo "<td>".$user_data['UF']."</td>";
-                            echo "<td></td>";
                             echo "<td>
-                                    <a href='edit_company.php?id=$user_data[CNPJ]'>
+                                    <a href='company/edit_company.php?cnpj=$user_data[CNPJ]'>
                                         <abbr title='editar'>
                                             <span class='material-symbols-outlined button-td edit'>edit</span>
                                         </abbr>
                                     </a>
-                                    <a href='delete_company.php?id=$user_data[CNPJ]'>
+                                    <a href='company/delete_company.php?cnpj=$user_data[CNPJ]'>
                                         <abbr title='apagar'>
                                             <span class='material-symbols-outlined button-td delete'>delete</span>
                                         </abbr>
                                     </a>
-                                    </td>";  
+                                </td>";  
                             echo "</tr>";
                         }
                         ?>
@@ -85,7 +85,7 @@
                     <tr>
                         <th colspan="14" class="add">
                             <abbr title='adicionar'>
-                                <a class="" href="formCompany.php">
+                                <a class="" href="company/formCompany.php">
                                     <span class='material-symbols-outlined add'>add</span>
                                 </a>
                             </abbr>
@@ -94,5 +94,6 @@
                 </tfoot>
             </table>
         </main> 
+        <script src="js/menuNav.js"></script>
     </body>
 </html>

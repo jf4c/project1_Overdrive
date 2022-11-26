@@ -1,6 +1,6 @@
 <?php
 use LDAP\Result;
-    include_once('conexao.php');
+    include_once('../conexao.php');
  
     if(!empty($_GET['id'])){
 
@@ -27,11 +27,11 @@ use LDAP\Result;
             }
         }
         else{
-            header('Location: tabelaUsers.php');
+            header('Location: ../tabelaUsers.php');
         }
     }
     else{
-        header('Location: tabelaUsers.php');
+        header('Location: ../tabelaUsers.php');
     }
 ?>
 
@@ -42,9 +42,9 @@ use LDAP\Result;
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/form.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/form.css">
         
     </head>
     <body>

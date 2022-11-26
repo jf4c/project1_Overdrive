@@ -19,10 +19,10 @@
                 <div class="container-log">
                     <h1>Login</h1>
                     <hr class="linha"/>
-                    <form class="forms" action='login.php' method="post">
+                    <form class="forms" action='login.php' method="post" autocomplete="on">
                         <div class="input-box">
                             <span class="material-symbols-outlined">person</span>
-                            <input type="text" name=user id="user" class="input"  placeholder="E-mail" >     
+                            <input type="text" name=user id="user" class="input"  placeholder="E-mail">     
                             <!-- <label for="user">User: </label> -->
                         </div>
             
