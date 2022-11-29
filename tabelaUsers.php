@@ -2,8 +2,10 @@
     include('check_log.php');
     include('conexao.php');
 
-    $query = "select * from users order by userId";
-    $result = mysqli_query($conexao, $query);
+    $queryUser = "select * from users order by userId";
+
+    $result_user = mysqli_query($conexao, $queryUser);
+
  
 ?>
 
@@ -36,7 +38,7 @@
             <table>
                 <thead>
                     <tr>
-                        <!-- <th scope="col">userId</th> -->
+                        <!-- <th width="1%" scope="col">userId</th> -->
                         <th width="7%" scope="col">Nome</th>
                         <th width="10%" scope="col">E-mail</th>
                         <th width="7%" scope="col">CPF</th>
@@ -55,7 +57,7 @@
                 </thead>
                 <tbody>
                    <?php
-                        while($user_data = mysqli_fetch_assoc($result)){
+                        while($user_data = mysqli_fetch_assoc($result_user)){
                             echo "<tr>";
                             // echo "<td>".$user_data['userId']."</td>";
                             echo "<td>".$user_data['name']."</td>";
@@ -70,13 +72,47 @@
                             echo "<td>".$user_data['bairro']."</td>";
                             echo "<td>".$user_data['cidade']."</td>";
                             echo "<td>".$user_data['UF']."</td>";
-                            echo "<td>
+                            
+
+                            if(!isset($user_data['company_Id'])){
+                               
+                                echo "<td>
                                     <abbr title='adicionar'>
-                                        <a href='user/formUser.php'>
+                                        <a href='user/joinUserCompany.php?id=$user_data[userId]'>
                                             <span class='material-symbols-outlined add'>add</span>
                                         </a>
                                     </abbr>
                                 </td>";
+
+                            }else{
+                                $queryCompany = "select name from company where companyId = {$user_data['company_Id']}";
+                                $result_company = mysqli_query($conexao, $queryCompany);
+                                $company_data = mysqli_fetch_assoc($result_company);
+                                
+                                echo 
+                                "<td >".
+                                "<div class='box-deleteEmpresa'>".
+                                "<div class='txt-deleteEmpresa'>".$company_data['name']."</div>".
+                                "<abbr title='deletar empresa'>
+                                    <a href='user/deleteUserCompany.php?id=$user_data[userId]'>
+                                        <span class='material-symbols-outlined deleteEmpresa'>disabled_by_default</span>
+                                    </a>
+                                </abbr>"  
+                                ."</div>".
+                                "</td>";
+                            }
+                            
+                            
+                            // $company_data = mysqli_fetch_assoc($result_company);
+                            // echo "<td>".$company_data['name']."</td>";
+
+                            // echo "<td>
+                            //         <abbr title='adicionar'>
+                            //             <a href='user/formUser.php'>
+                            //                 <span class='material-symbols-outlined add'>add</span>
+                            //             </a>
+                            //         </abbr>
+                            //     </td>";
                            
                                 echo "<td>
                                     <a href='user/edit_user.php?id=$user_data[userId]'>

@@ -36,6 +36,25 @@ th,td{
     box-shadow: 0px 0px 5px #000000af;
     
 }
+
+.deleteEmpresa{
+    flex-direction: row-reverse;
+    color: red;
+    border-radius: 5px;
+    justify-items: end;
+}
+.box-deleteEmpresa{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5px;
+
+}
+.txt-deleteEmpresa{
+    
+}
+
 .edit{
     background-color: #00ff2a;
 
@@ -50,8 +69,8 @@ th,td{
     vertical-align: middle;
     width: 100%;
     transition: 1s;
-
 }
+
 .add:hover{
     background-color:#FF0E46;
     color: #FFF;

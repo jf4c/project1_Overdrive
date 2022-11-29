@@ -66,12 +66,12 @@
                             echo "<td>".$user_data['cidade']."</td>";
                             echo "<td>".$user_data['UF']."</td>";
                             echo "<td>
-                                    <a href='company/edit_company.php?cnpj=$user_data[CNPJ]'>
+                                    <a href='company/edit_company.php?id=$user_data[companyId]'>
                                         <abbr title='editar'>
                                             <span class='material-symbols-outlined button-td edit'>edit</span>
                                         </abbr>
                                     </a>
-                                    <a href='company/delete_company.php?cnpj=$user_data[CNPJ]'>
+                                    <a href='company/delete_company.php?id=$user_data[companyId]'>
                                         <abbr title='apagar'>
                                             <span class='material-symbols-outlined button-td delete'>delete</span>
                                         </abbr>

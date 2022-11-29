@@ -59,7 +59,7 @@ use LDAP\Result;
             </nav>
         </header>     -->
         <main>
-            <form  action="saveEdit.php" method="POST">
+            <form  action="saveEditCompany.php?id=<?php echo $id ;?>" method="post">
                 <legend><b>Editar</b></legend>
                 <div class="nomeEmail">
                     <div class="input-box">
