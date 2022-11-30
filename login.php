@@ -10,16 +10,24 @@ if(empty($_POST['user']) || empty($_POST['pass'])){
 $user = mysqli_real_escape_string($conexao, $_POST['user']);
 $password = mysqli_real_escape_string($conexao, $_POST['pass']);
 
-$query = "select email from users where (email = '{$user}' or CPF = '{$user}') and pass = md5(md5('{$password}'))";
-
+$query = "select email, admin from users where email = '{$user}' and pass = md5(md5('{$password}'))";
 $result = mysqli_query($conexao, $query);
-
+$user_data = mysqli_fetch_assoc($result); 
+$admin = $user_data['admin'];
 $row = mysqli_num_rows($result);
 
+
 if($row == 1){
-    $_SESSION['user'] = $user;
-    header('Location: admin/tabelaUsers.php');
-    exit();
+    if($admin){
+        $_SESSION['user'] = $user;
+        $_SESSION['admin'] = $admin;
+        header('Location: admin/tabelaUsers.php');
+        exit();
+    }else{
+        $_SESSION['user'] = $user;
+        $_SESSION['admin'] = $admin;
+        header('Location: userNotAdmin/tabelaUsers.php');
+    }
 
 }else{
     header('Location: index.php');
