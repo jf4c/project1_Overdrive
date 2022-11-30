@@ -1,6 +1,6 @@
 <?php   
     session_start();
-    include('../conexao.php');
+    include('../../conexao.php');
 
     $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
     $email = mysqli_real_escape_string($conexao, $_POST['email']);
@@ -44,7 +44,7 @@
         '{$uf}')";
     
         $addQuery = mysqli_query($conexao, $query);
-        header('Location: formUser.php');
+        header('Location: ../tabelaUsers.php');
     }
     
 ?>

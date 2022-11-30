@@ -1,6 +1,6 @@
 <?php   
     session_start();
-    include('../conexao.php');
+    include('../../conexao.php');
     $companyId = $_GET['id'];
     $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
     $nf = mysqli_real_escape_string($conexao, $_POST['fantasy']);
@@ -12,7 +12,6 @@
     $bairro = mysqli_real_escape_string($conexao, $_POST['bairro']);
     $cidade = mysqli_real_escape_string($conexao, $_POST['cidade']);
     $uf = mysqli_real_escape_string($conexao, $_POST['uf']);
-
 
     
     $query = "update company 

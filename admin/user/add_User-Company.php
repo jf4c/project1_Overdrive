@@ -1,6 +1,6 @@
 <?php
-    include('../check_log.php');
-    include('../conexao.php');
+    include('../../check_log.php');
+    include('../../conexao.php');
     
     $companyId = mysqli_real_escape_string($conexao, $_POST['company']);
     $userId = $_GET['id'];

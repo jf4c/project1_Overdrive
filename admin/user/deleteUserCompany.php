@@ -1,6 +1,6 @@
 <?php
-    include('../check_log.php');
-    include('../conexao.php');
+    include('../../check_log.php');
+    include('../../conexao.php');
 
     $userId = $_GET['id'];
    
