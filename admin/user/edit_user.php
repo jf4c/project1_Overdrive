@@ -99,12 +99,12 @@ use LDAP\Result;
                 <div class="cnhCar">
                     <div class="input-box">
                         <label for="cnh">CNH: </label>
-                        <input type="text" name="cnh" id="cnh" class="input"  placeholder="CNH" value='<?php echo $cnh;?>' required>     
+                        <input type="text" name="cnh" id="cnh" class="input"  placeholder="CNH" value='<?php echo $cnh;?>'>     
                     </div>
                     
                     <div class="input-box">
                         <label for="carro">Carro: </label>
-                        <input type="text" name="carro" id="carro" class="input"  placeholder="Carro" value='<?php echo $carro;?>' required>     
+                        <input type="text" name="carro" id="carro" class="input"  placeholder="Carro" value='<?php echo $carro;?>' >     
                     </div>
                 </div>
                 

@@ -6,7 +6,6 @@
 
     $result_user = mysqli_query($conexao, $queryUser);
 
- 
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +39,7 @@
                     <tr>
                         <!-- <th width="1%" scope="col">userId</th> -->
                         <th width="7%" scope="col">Nome</th>
-                        <th width="10%" scope="col">E-mail</th>
+                        <th width="15%" scope="col">E-mail</th>
                         <th width="7%" scope="col">CPF</th>
                         <th width="7%" scope="col">CNH</th>
                         <th width="5%" scope="col">carro</th>
@@ -52,7 +51,7 @@
                         <th width="7%" scope="col">cidade</th>
                         <th width="3%" scope="col">UF</th>
                         <th width="7%" scope="col">Empresas</th>
-                        <th width="7%" scope="col">***</th>
+                        <th width="3%" scope="col">***</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,7 +59,13 @@
                         while($user_data = mysqli_fetch_assoc($result_user)){
                             echo "<tr>";
                             // echo "<td>".$user_data['userId']."</td>";
-                            echo "<td>".$user_data['name']."</td>";
+                            echo "<td class='name'>".$user_data['name'];
+                            if($user_data["admin"] == 1){
+                                echo "<abbr title='user admin'> 
+                                    <span class='material-symbols-outlined iconVariation'>person</span>
+                                </abbr>";
+                            }                           
+                            echo"</td>";
                             echo "<td>".$user_data['Email']."</td>";
                             echo "<td>".$user_data['CPF']."</td>";
                             echo "<td>".$user_data['CNH']."</td>";
@@ -102,31 +107,29 @@
                                 "</td>";
                             }
                             
-                            
-                            // $company_data = mysqli_fetch_assoc($result_company);
-                            // echo "<td>".$company_data['name']."</td>";
 
-                            // echo "<td>
-                            //         <abbr title='adicionar'>
-                            //             <a href='user/formUser.php'>
-                            //                 <span class='material-symbols-outlined add'>add</span>
-                            //             </a>
-                            //         </abbr>
-                            //     </td>";
                            
                                 echo "<td>
+                                    <span class='material-symbols-outlined menu' id='menu'>menu</span>
+                                    <div class='boxMenu'>
                                     <a href='user/edit_user.php?id=$user_data[userId]'>
                                         <abbr title='editar'>
-                                            <span class='material-symbols-outlined button-td edit'>edit</span>
+                                            <span class='material-symbols-outlined buttonUsers button-td edit'>edit</span>
                                         </abbr>
                                     </a>
                                     <a href='user/delete_user.php?id=$user_data[userId]'>
                                         <abbr title='apagar'>
-                                            <span class='material-symbols-outlined button-td delete'>delete</span>
+                                            <span class='material-symbols-outlined buttonUsers button-td delete'>delete</span>
                                         </abbr>
-                                    </a>
-                                    </td>";  
-                            echo "</tr>";
+                                    </a>";
+                                    if($user_data['admin'] == 0){
+                                        echo "<a href='user/up_user.php?id=$user_data[userId]'>
+                                            <abbr title='promove a Admin'>
+                                                <span class='material-symbols-outlined buttonUsers button-td up'>arrow_upward</span>
+                                            </abbr>
+                                        </a>";
+                                    }
+                            echo "</div> </td> </tr>";
                         }
                         ?>
                 </tbody>
@@ -144,5 +147,6 @@
             </table>
         </main> 
         <script src="../js/menuNav.js"></script>
+        <script src="../js/hambMenu.js"></script>
     </body>
 </html>

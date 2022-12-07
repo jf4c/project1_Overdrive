@@ -26,6 +26,20 @@ th,td{
   vertical-align: middle;
   font-size: 15px;
 }
+.iconVariation{
+    display: inline-block;
+    vertical-align: middle;
+    left: 0px;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 40
+    ;
+}
+.name{
+    
+}
 
 .button-td{
     font-size: 1.5rem;
@@ -34,7 +48,21 @@ th,td{
     color: #000;
     border-radius: 10px;
     box-shadow: 0px 0px 5px #000000af;
+}
+
+.buttonUsers{
+    display: block;
     
+}
+
+
+.boxMenu{
+    
+    display: none;
+}
+.onMenu{
+    transition: 5s;
+    display: block;
 }
 
 .deleteEmpresa{
@@ -51,8 +79,13 @@ th,td{
     margin-left: 5px;
 
 }
-.txt-deleteEmpresa{
-    
+.menu{
+    cursor: pointer;
+    transition: 500ms;
+}
+.menu:hover{
+    color: #FFF;
+
 }
 
 .edit{
@@ -63,6 +96,11 @@ th,td{
 .delete{
     background-color: red;
 }
+
+.up{
+    background-color: rgb(255, 238, 0);
+}
+
 
 .add{
     text-align: center;
@@ -75,3 +113,5 @@ th,td{
     background-color:#FF0E46;
     color: #FFF;
 }
+
+

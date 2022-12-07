@@ -20,7 +20,7 @@
     </head>
     <body>
         <header>
-            <h1><img class="logo" src="../img/logo.png" alt="logo da Overdrive"></h1>
+            <h1><img class="logo" src="../../img/logo.png" alt="logo da Overdrive"></h1>
             <nav>
                 <ul>
                     <li class="li-nav"><a class="link-nav" href="../tabelaUsers.php">Usuarios</a></li>
@@ -100,7 +100,8 @@
         <footer>
         </footer> 
         
-    <script src="../js/buscaCEP.js"></script>      
+    <script src="../js/buscaCEP.js"></script>   
+
     </body>
     
 </html>

@@ -22,13 +22,13 @@ desc users;
 
 
 insert into users
-(name,                 Email,                     CPF,         CEP,          rua,              bairro,              cidade,       uf,             pass,       admin)     values
-("Júlio Costa","juliofac2001@hotmail.com", "440.911.048.94", "13668048", "Luis Terassi", "Jardim Águas Claras", "Porto Ferreira", "SP",  md5(md5('jfac1923')), true); 
+(name,                  Email,                     CPF,         CEP,          rua,              bairro,              cidade,       uf,             pass,       admin)     values
+("Júlio Costa", "juliofac2001@hotmail.com", "440.911.048.94", "13668048", "Luis Terassi", "Jardim Águas Claras", "Porto Ferreira", "SP",  md5(md5('jfac1923')), true); 
 
 
 SHOW CREATE TABLE users;
 
-select * from users
+select * from users;
 
-
+select email from users where email = 'juliofac2001@hotmail.com' and pass = md5(md5('jfac1923'));
 

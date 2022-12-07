@@ -27,6 +27,7 @@ if($row == 1){
         $_SESSION['user'] = $user;
         $_SESSION['admin'] = $admin;
         header('Location: userNotAdmin/tabelaUsers.php');
+        exit();
     }
 
 }else{

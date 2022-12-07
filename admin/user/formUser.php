@@ -57,7 +57,7 @@
                 <div class="cpfTel">
                     <div class="input-box">
                         <label for="cpf">CPF: </label>
-                        <input type="text" name="cpf" id="cpf" class="input"  placeholder="CPF" required>     
+                        <input type="text" name="cpf" id="cpf" class="input"  placeholder="CPF" maxlength="14" required>     
                     </div>
                     
                     <div class="input-box">
@@ -70,12 +70,12 @@
                 <div class="cnhCar">
                     <div class="input-box">
                         <label for="cnh">CNH: </label>
-                        <input type="text" name="cnh" id="cnh" class="input"  placeholder="CNH" required>     
+                        <input type="text" name="cnh" id="cnh" class="input"  placeholder="CNH" >     
                     </div>
                     
                     <div class="input-box">
                         <label for="carro">Carro: </label>
-                        <input type="text" name="carro" id="carro" class="input"  placeholder="Carro" required>     
+                        <input type="text" name="carro" id="carro" class="input"  placeholder="Carro" >     
                     </div>
                 </div>
                 
@@ -128,6 +128,7 @@
         </footer> 
         
     <script src="../../js/buscaCEP.js"></script>      
+    <script src="../../js/mask.js"></script>      
     </body>
     
 </html>
