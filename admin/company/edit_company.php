@@ -77,7 +77,7 @@ use LDAP\Result;
                     
                     <div class="input-box">
                         <label for="phone">Tel: </label>
-                        <input type="tel" name="phone" id="phone" class="input"  placeholder="Telefone" value='<?php echo $phone;?>' required>     
+                        <input type="tel" name="phone" id="phone" class="input"  placeholder="Telefone" value='<?php echo $phone;?>'  maxlength="15" onkeyup="handlePhone(event)" required>     
                     </div> 
 
                 </div>
@@ -127,7 +127,8 @@ use LDAP\Result;
         <footer>
         </footer> 
         
-    <script src="../js/buscaCEP.js"></script>      
+        <script src="../../js/buscaCEP.js"></script> 
+        <script src="../../js/mask.js"></script>       
     </body>
     
 </html>

@@ -62,7 +62,7 @@
                     
                     <div class="input-box">
                         <label for="phone">Tel: </label>
-                        <input type="tel" name="phone" id="phone" class="input"  placeholder="Telefone" required>     
+                        <input type="tel" name="phone" id="phone" class="input"  placeholder="Telefone" maxlength="15" onkeyup="handlePhone(event)" required>     
                     </div> 
 
                 </div>
